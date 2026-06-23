@@ -332,7 +332,7 @@ export default function Home() {
       >
         {/* Decorative watermark lotus — oversized, partially off-screen bottom-right of text column */}
         <div style={{ position: "absolute", top: "40px", left: "-80px", width: "750px", height: "750px", opacity: 0.09, pointerEvents: "none", zIndex: 0 }}>
-          <Image src="/logo.png" alt="" fill style={{ objectFit: "contain" }} aria-hidden="true" />
+          <Image src="/logo.png" alt="" fill style={{ objectFit: "contain" }} aria-hidden="true" unoptimized />
         </div>
 
         <div className="flex flex-col justify-center px-[8%] py-20 md:py-24" style={{ position: "relative", zIndex: 1 }}>
@@ -402,7 +402,7 @@ export default function Home() {
             {SERVICES.slice(0, 4).map((s, i) => (
               <FadeIn key={s.name} delay={i * 80} className="flex flex-col items-center gap-4">
                 <div style={{ width: "150px", height: "150px", borderRadius: "50%", overflow: "hidden", border: "2.5px solid var(--dry-sage)", flexShrink: 0, position: "relative" }}>
-                  <Image src={s.image} alt={s.alt} fill className="object-cover" />
+                  <Image src={s.image} alt={s.alt} fill className="object-cover" unoptimized />
                 </div>
                 <p style={{ fontFamily: "var(--font-dm-sans)", fontSize: "12px", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--green)", textAlign: "center" }}>
                   {s.name}
@@ -416,7 +416,7 @@ export default function Home() {
             {SERVICES.slice(4).map((s, i) => (
               <FadeIn key={s.name} delay={(i + 4) * 80} className="col-span-2 flex flex-col items-center gap-4">
                 <div style={{ width: "150px", height: "150px", borderRadius: "50%", overflow: "hidden", border: "2.5px solid var(--dry-sage)", flexShrink: 0, position: "relative" }}>
-                  <Image src={s.image} alt={s.alt} fill className="object-cover" />
+                  <Image src={s.image} alt={s.alt} fill className="object-cover" unoptimized />
                 </div>
                 <p style={{ fontFamily: "var(--font-dm-sans)", fontSize: "12px", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--green)", textAlign: "center" }}>
                   {s.name}
@@ -429,7 +429,7 @@ export default function Home() {
             {SERVICES.slice(4).map((s, i) => (
               <FadeIn key={s.name} delay={(i + 4) * 80} className="flex flex-col items-center gap-4">
                 <div style={{ width: "150px", height: "150px", borderRadius: "50%", overflow: "hidden", border: "2.5px solid var(--dry-sage)", flexShrink: 0, position: "relative" }}>
-                  <Image src={s.image} alt={s.alt} fill className="object-cover" />
+                  <Image src={s.image} alt={s.alt} fill className="object-cover" unoptimized />
                 </div>
                 <p style={{ fontFamily: "var(--font-dm-sans)", fontSize: "12px", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--green)", textAlign: "center" }}>
                   {s.name}
@@ -463,7 +463,7 @@ export default function Home() {
         <FadeIn>
           {/* ABOUT IMAGE — replace ABOUT_IMAGE constant at top of file to change */}
           <div style={{ borderRadius: "2px", overflow: "hidden", aspectRatio: "4/5", position: "relative" }}>
-            <Image src={ABOUT_IMAGE} alt="Calming spa interior" fill className="object-cover" />
+            <Image src={ABOUT_IMAGE} alt="Calming spa interior" fill className="object-cover" unoptimized />
           </div>
         </FadeIn>
 
