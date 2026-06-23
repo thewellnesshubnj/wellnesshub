@@ -170,7 +170,7 @@ function FadeIn({
 function Logo({ size = 32, color = "var(--green)" }: { size?: number; color?: string }) {
   return (
     // ↓ SWAP THIS with: <Image src="/logo.png" alt="The Wellness Hub" width={size} height={size} />
-    <Image src = "/logo.png" alt = "The Wellness Hub" width = {size} height = {size} />
+    <Image src = "/logo.png" alt = "The Wellness Hub" width = {size} height = {size} unoptimized />
   );
 }
 
