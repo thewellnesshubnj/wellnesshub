@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Wellness Hub — Rewind. Rejuvenate. Recharge.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1D6A1B;
+    --floral-white: #F7F3EB; /*#F7F3EB */
+    --bone: #EADFCF; /*#EADFCF*/
+    --dry-sage: #A8B894;
+    --granite: #3F4A3C; /*#3F4A3C*/
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--floral-white);
+    color: var(--granite);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--floral-white);
+    border-bottom: 1px solid var(--bone);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    height: 70px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo img {
+    height: 38px;
+    width: 38px;
+    object-fit: contain;
+  }
+
+  .nav-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--green);
+    line-height: 1.1;
+  }
+
+  .nav-logo-text span {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: var(--dry-sage);
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--granite);
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--green); }
+
+  .nav-cta {
+    background: var(--green);
+    color: var(--floral-white) !important;
+    padding: 10px 22px;
+    border-radius: 2px;
+    font-size: 12px !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  .nav-cta:hover { background: var(--granite); color: var(--floral-white) !important; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: var(--granite);
+  }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    padding-top: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--floral-white);
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 6% 80px 8%;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--dry-sage);
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(38px, 4.5vw, 64px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--granite);
+    margin-bottom: 28px;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-text h1 em {
+    color: var(--green);
+    font-style: normal;
+  }
+
+  .hero-text p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--granite);
+    opacity: 0.8;
+    max-width: 420px;
+    margin-bottom: 40px;
+  }
+
+  .btn-outline {
+    display: inline-block;
+    border: 1.5px solid var(--green);
+    color: var(--green);
+    padding: 14px 32px;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    transition: all 0.25s;
+  }
+
+  .btn-outline:hover {
+    background: var(--green);
+    color: var(--floral-white);
+  }
+
+  .btn-filled {
+    display: inline-block;
+    background: var(--green);
+    color: var(--floral-white);
+    padding: 14px 32px;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    border: 1.5px solid var(--green);
+    transition: all 0.25s;
+    cursor: pointer;
+  }
+
+  .btn-filled:hover {
+    background: var(--granite);
+    border-color: var(--granite);
+  }
+
+  .hero-image {
+    position: relative;
+    overflow: hidden;
+    background: var(--bone);
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-image-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    background: linear-gradient(160deg, var(--bone) 0%, var(--dry-sage) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .hero-image-placeholder svg {
+    width: 80px;
+    height: 80px;
+    opacity: 0.4;
+  }
+
+  .hero-image-placeholder p {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--granite);
+    opacity: 0.5;
+  }
+
+  /* ── MARQUEE ── */
+  .marquee-strip {
+    background: var(--green);
+    overflow: hidden;
+    padding: 16px 0;
+    white-space: nowrap;
+  }
+
+  .marquee-track {
+    display: inline-flex;
+    animation: marquee 22s linear infinite;
+  }
+
+  .marquee-track span {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--floral-white);
+    letter-spacing: 0.06em;
+    padding: 0 32px;
+    opacity: 0.9;
+  }
+
+  .marquee-track .dot {
+    color: var(--dry-sage);
+    opacity: 0.7;
+    font-style: normal;
+    font-size: 18px;
+    padding: 0;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 100px 8%; }
+
+  .section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--dry-sage);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 3vw, 44px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--granite);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .section-title em {
+    color: var(--green);
+    font-style: normal;
+  }
+
+  /* ── SERVICES ── */
+  #services {
+    background: var(--floral-white);
+    text-align: center;
+  }
+
+  .services-intro {
+    max-width: 600px;
+    margin: 0 auto 60px;
+  }
+
+  .services-intro p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--granite);
+    opacity: 0.8;
+    margin-top: 16px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 50px;
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .service-circle {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--bone);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--dry-sage);
+    flex-shrink: 0;
+  }
+
+  .service-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .service-circle-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .service-circle-placeholder svg {
+    width: 36px;
+    height: 36px;
+    color: var(--green);
+    opacity: 0.5;
+  }
+
+  .service-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--granite);
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--bone);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 100px 8%;
+  }
+
+  .about-image {
+    border-radius: 2px;
+    overflow: hidden;
+    background: var(--dry-sage);
+    aspect-ratio: 4/5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .about-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    opacity: 0.5;
+  }
+
+  .about-image-placeholder svg { width: 60px; height: 60px; }
+  .about-image-placeholder p {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--granite);
+  }
+
+  .about-text { display: flex; flex-direction: column; gap: 20px; }
+
+  .about-text p {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--granite);
+    opacity: 0.85;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 16px;
+    padding-top: 32px;
+    border-top: 1px solid var(--dry-sage);
+  }
+
+  .stat { text-align: center; }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--green);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--granite);
+    opacity: 0.6;
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ── BOOKING ── */
+  #booking {
+    background: var(--granite);
+    text-align: center;
+    padding: 100px 8%;
+  }
+
+  #booking .section-eyebrow { color: var(--dry-sage); }
+  #booking .section-title { color: var(--floral-white); }
+
+  .booking-coming-soon {
+    display: inline-block;
+    border: 1px solid var(--dry-sage);
+    color: var(--dry-sage);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 10px 28px;
+    border-radius: 100px;
+    margin-bottom: 60px;
+    font-weight: 500;
+  }
+
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    opacity: 0.55;
+    pointer-events: none;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .pricing-card {
+    background: rgba(247, 243, 235, 0.06);
+    border: 1px solid rgba(168, 184, 148, 0.25);
+    border-radius: 2px;
+    padding: 40px 28px;
+    text-align: left;
+  }
+
+  .pricing-card.featured {
+    border-color: var(--dry-sage);
+    background: rgba(168, 184, 148, 0.08);
+  }
+
+  .pricing-tier {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dry-sage);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .pricing-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--floral-white);
+    margin-bottom: 8px;
+  }
+
+  .pricing-price {
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--floral-white);
+    margin-bottom: 28px;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .pricing-price span {
+    font-size: 16px;
+    opacity: 0.5;
+  }
+
+  .pricing-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+
+  .pricing-features li {
+    font-size: 13px;
+    color: var(--floral-white);
+    opacity: 0.75;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .pricing-features li::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 1px;
+    background: var(--dry-sage);
+    flex-shrink: 0;
+  }
+
+  .pricing-btn {
+    width: 100%;
+    background: none;
+    border: 1px solid rgba(168, 184, 148, 0.4);
+    color: var(--floral-white);
+    padding: 13px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+  }
+
+  .booking-note {
+    margin-top: 48px;
+    font-size: 13px;
+    color: var(--dry-sage);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── SIGNUP FORM ── */
+  #signup {
+    background: var(--floral-white);
+    text-align: center;
+    padding: 100px 8%;
+  }
+
+  .signup-inner {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .signup-inner p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--granite);
+    opacity: 0.75;
+    margin-bottom: 44px;
+    margin-top: 16px;
+  }
+
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+  }
+
+  .form-field label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--granite);
+    font-weight: 500;
+  }
+
+  .form-field .optional {
+    font-weight: 400;
+    color: var(--dry-sage);
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 10px;
+    margin-left: 4px;
+  }
+
+  .form-field input {
+    background: var(--bone);
+    border: 1px solid var(--bone);
+    border-radius: 2px;
+    padding: 14px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--granite);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-field input:focus {
+    border-color: var(--dry-sage);
+    background: var(--floral-white);
+  }
+
+  .form-field input::placeholder { color: var(--granite); opacity: 0.35; }
+
+  .form-submit {
+    margin-top: 8px;
+  }
+
+  .form-submit button {
+    width: 100%;
+    background: var(--green);
+    color: var(--floral-white);
+    border: none;
+    padding: 16px;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.25s;
+    border-radius: 2px;
+  }
+
+  .form-submit button:hover { background: var(--granite); }
+
+  .form-success {
+    display: none;
+    background: var(--bone);
+    border: 1px solid var(--dry-sage);
+    border-radius: 2px;
+    padding: 24px;
+    font-size: 15px;
+    color: var(--green);
+    font-family: 'Playfair Display', serif;
+  }
+
+  .privacy-note {
+    font-size: 11px;
+    color: var(--granite);
+    opacity: 0.4;
+    margin-top: 16px;
+    letter-spacing: 0.03em;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--granite);
+    padding: 60px 8% 36px;
+    color: var(--floral-white);
+  }
+
+  .footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgba(168, 184, 148, 0.2);
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .footer-logo img { height: 44px; }
+
+  .footer-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--floral-white);
+    line-height: 1.1;
+  }
+
+  .footer-logo-text span {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    color: var(--dry-sage);
+    text-transform: uppercase;
+  }
+
+  .footer-tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: var(--dry-sage);
+    font-style: italic;
+    letter-spacing: 0.08em;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 16px;
+  }
+
+  .social-link {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(168, 184, 148, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .social-link:hover {
+    border-color: var(--dry-sage);
+    background: rgba(168, 184, 148, 0.1);
+  }
+
+  .social-link svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--dry-sage);
+  }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+    color: var(--floral-white);
+    opacity: 0.35;
+    letter-spacing: 0.04em;
+  }
+
+  .footer-nav {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .footer-nav a {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dry-sage);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+
+  .footer-nav a:hover { opacity: 1; }
+
+  /* ── FADE IN ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    #home { grid-template-columns: 1fr; min-height: auto; }
+    .hero-text { padding: 60px 6%; }
+    .hero-image { min-height: 340px; }
+    .hero-image-placeholder { min-height: 340px; }
+
+    #about { grid-template-columns: 1fr; gap: 40px; }
+    .about-image { aspect-ratio: 3/2; }
+
+    .services-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .pricing-cards { grid-template-columns: 1fr; max-width: 360px; }
+
+    .footer-top { flex-direction: column; gap: 24px; text-align: center; }
+    .footer-bottom { flex-direction: column; gap: 16px; }
+
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+
+  @media (max-width: 560px) {
+    section { padding: 70px 5%; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .service-circle { width: 120px; height: 120px; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <img src="logo.png" alt="The Wellness Hub logo" onerror="this.style.display='none'">
+    <div class="nav-logo-text">
+      The Wellness Hub
+      <span>Rewind · Rejuvenate · Recharge</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#booking">Booking</a></li>
+    <li><a href="#signup" class="nav-cta">Sign Up for Updates</a></li>
+  </ul>
+
+  <button class="hamburger" aria-label="Open menu" onclick="document.querySelector('.nav-links').style.display = document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex'; document.querySelector('.nav-links').style.flexDirection = 'column'; document.querySelector('.nav-links').style.position = 'absolute'; document.querySelector('.nav-links').style.top = '70px'; document.querySelector('.nav-links').style.left = '0'; document.querySelector('.nav-links').style.right = '0'; document.querySelector('.nav-links').style.background = 'var(--floral-white)'; document.querySelector('.nav-links').style.padding = '24px 8%'; document.querySelector('.nav-links').style.borderBottom = '1px solid var(--bone)'; document.querySelector('.nav-links').style.gap = '20px';">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+
+<!-- ── HERO ── -->
+<section id="home">
+  <div class="hero-text fade-in">
+    <p class="hero-eyebrow">Welcome to The Wellness Hub</p>
+    <h1>RESTORE<br>YOUR BODY.<br><em>ELEVATE</em><br>YOUR MIND.</h1>
+    <p>Where ancient healing traditions meet cutting-edge AI wellness technology. A sanctuary designed entirely around you.</p>
+    <a href="#services" class="btn-outline">Explore Our Services →</a>
+  </div>
+
+  <div class="hero-image">
+    <div class="hero-image-placeholder">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40 10C40 10 20 22 20 40C20 58 40 70 40 70C40 70 60 58 60 40C60 22 40 10 40 10Z" stroke="#3F4A3C" stroke-width="1.5" fill="none"/>
+        <circle cx="40" cy="40" r="8" stroke="#3F4A3C" stroke-width="1.5" fill="none"/>
+      </svg>
+      <p>Hero image placeholder</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── MARQUEE ── -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Rewind</span><span class="dot">✦</span>
+    <span>Rejuvenate</span><span class="dot">✦</span>
+    <span>Recharge</span><span class="dot">✦</span>
+    <span>The Wellness Hub</span><span class="dot">✦</span>
+    <span>AI Wellness</span><span class="dot">✦</span>
+    <span>Holistic Healing</span><span class="dot">✦</span>
+    <span>Rewind</span><span class="dot">✦</span>
+    <span>Rejuvenate</span><span class="dot">✦</span>
+    <span>Recharge</span><span class="dot">✦</span>
+    <span>The Wellness Hub</span><span class="dot">✦</span>
+    <span>AI Wellness</span><span class="dot">✦</span>
+    <span>Holistic Healing</span><span class="dot">✦</span>
+  </div>
+</div>
+
+
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="services-intro fade-in">
+    <p class="section-eyebrow">What We Offer</p>
+    <h2 class="section-title">OUR TOP <em>SERVICES</em></h2>
+    <p>We create customised wellness experiences that align with your lifestyle, goals, and unique needs. Our evidence-based approach blends traditional spa therapies with AI-driven health insights — ensuring measurable, lasting results every step of the way.</p>
+  </div>
+
+  <div class="services-grid fade-in">
+    <div class="service-card">
+      <div class="service-circle">
+        <div class="service-circle-placeholder">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 6C12 6 8 11 8 18C8 25 12 30 18 30" stroke="#1D6A1B" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M18 6C24 6 28 11 28 18C28 25 24 30 18 30" stroke="#1D6A1B" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="18" cy="18" r="4" stroke="#1D6A1B" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+      <h3>Facial Treatments</h3>
+    </div>
+
+    <div class="service-card">
+      <div class="service-circle">
+        <div class="service-circle-placeholder">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 26C14 22 22 22 26 26" stroke="#1D6A1B" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M10 18C14 14 22 14 26 18" stroke="#1D6A1B" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M10 10C14 6 22 6 26 10" stroke="#1D6A1B" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <h3>Therapeutic Massage</h3>
+    </div>
+
+    <div class="service-card">
+      <div class="service-circle">
+        <div class="service-circle-placeholder">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 8V28M8 18H28" stroke="#1D6A1B" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="18" cy="18" r="12" stroke="#1D6A1B" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+      <h3>Body Scrubs & Wraps</h3>
+    </div>
+
+    <div class="service-card">
+      <div class="service-circle">
+        <div class="service-circle-placeholder">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="8" width="20" height="20" rx="3" stroke="#1D6A1B" stroke-width="1.5"/>
+            <path d="M13 18H23M18 13V23" stroke="#1D6A1B" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <h3>AI Wellness Consultation</h3>
+    </div>
+  </div>
+
+  <div style="text-align:center;" class="fade-in">
+    <a href="#about" class="btn-outline">Learn More →</a>
+  </div>
+</section>
+
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="about-image fade-in">
+    <div class="about-image-placeholder">
+      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 10C30 10 14 22 14 36C14 50 30 58 30 58C30 58 46 50 46 36C46 22 30 10 30 10Z" stroke="#3F4A3C" stroke-width="1.5" fill="none"/>
+      </svg>
+      <p>About image</p>
+    </div>
+  </div>
+
+  <div class="about-text fade-in">
+    <p class="section-eyebrow">Our Story</p>
+    <h2 class="section-title">ABOUT <em>THE WELLNESS HUB</em></h2>
+
+    <p>The Wellness Hub was born from a simple belief: true wellness is not a luxury — it's a necessity. We set out to create a space where every visit feels like a full reset; a place where ancient healing traditions and modern science come together seamlessly.</p>
+
+    <p>What sets us apart is our integration of AI-powered health insights with hands-on, human-centred care. Before your appointment, our wellness AI analyses your health goals, stress levels, and lifestyle to help our therapists craft a session that's uniquely yours.</p>
+
+    <p>[Your personal story here — share your inspiration for founding The Wellness Hub and what makes your approach different.]</p>
+
+    <div class="about-stats">
+      <div class="stat">
+        <span class="stat-number">4+</span>
+        <span class="stat-label">Core Services</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">AI</span>
+        <span class="stat-label">Powered Insights</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Personalised Care</span>
+      </div>
+    </div>
+
+    <div style="margin-top: 8px;">
+      <a href="#signup" class="btn-outline">Stay Updated →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── BOOKING ── -->
+<section id="booking">
+  <p class="section-eyebrow fade-in">Reserve Your Experience</p>
+  <h2 class="section-title fade-in">BOOK YOUR <em>SESSION</em></h2>
+  <div class="fade-in">
+    <span class="booking-coming-soon">✦ Coming Soon — Booking System Under Construction ✦</span>
+  </div>
+
+  <div class="pricing-cards fade-in">
+    <div class="pricing-card">
+      <p class="pricing-tier">Silver</p>
+      <p class="pricing-name">Restore</p>
+      <p class="pricing-price">$<span>TBD</span></p>
+      <ul class="pricing-features">
+        <li>60-min therapeutic massage</li>
+        <li>Basic wellness consultation</li>
+        <li>Aromatherapy add-on</li>
+      </ul>
+      <button class="pricing-btn">Reserve</button>
+    </div>
+
+    <div class="pricing-card featured">
+      <p class="pricing-tier">Gold — Most Popular</p>
+      <p class="pricing-name">Revive</p>
+      <p class="pricing-price">$<span>TBD</span></p>
+      <ul class="pricing-features">
+        <li>90-min full body treatment</li>
+        <li>AI wellness assessment</li>
+        <li>Facial + body scrub</li>
+        <li>Post-session health report</li>
+      </ul>
+      <button class="pricing-btn">Reserve</button>
+    </div>
+
+    <div class="pricing-card">
+      <p class="pricing-tier">Diamond</p>
+      <p class="pricing-name">Transcend</p>
+      <p class="pricing-price">$<span>TBD</span></p>
+      <ul class="pricing-features">
+        <li>Full-day luxury retreat</li>
+        <li>Comprehensive AI health plan</li>
+        <li>All services included</li>
+        <li>Priority scheduling</li>
+      </ul>
+      <button class="pricing-btn">Reserve</button>
+    </div>
+  </div>
+
+  <p class="booking-note fade-in">Pricing and availability will be announced at launch. Sign up below to be first to know.</p>
+</section>
+
+
+<!-- ── SIGNUP FORM ── -->
+<section id="signup">
+  <div class="signup-inner">
+    <div class="fade-in">
+      <p class="section-eyebrow">Stay Connected</p>
+      <h2 class="section-title">BE THE FIRST<br>TO <em>KNOW</em></h2>
+      <p>Sign up to receive updates on our grand opening, exclusive early-access offers, and complimentary wellness tips straight to your inbox.</p>
+    </div>
+
+    <form class="signup-form fade-in" id="signupForm">
+      <div class="form-field">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+      </div>
+
+      <div class="form-field">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+      </div>
+
+      <div class="form-field">
+        <label for="phone">Phone Number <span class="optional">(optional)</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="+1 (000) 000-0000">
+      </div>
+
+      <div class="form-submit">
+        <button type="submit">Notify Me</button>
+      </div>
+    </form>
+
+    <div class="form-success" id="formSuccess">
+      Thank you! We'll be in touch soon. ✦
+    </div>
+
+    <p class="privacy-note">We respect your privacy. No spam — ever. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo">
+      <img src="logo.png" alt="The Wellness Hub" onerror="this.style.display='none'">
+      <div class="footer-logo-text">
+        The Wellness Hub
+        <span>Rewind · Rejuvenate · Recharge</span>
+      </div>
+    </div>
+
+    <p class="footer-tagline">Rewind. Rejuvenate. Recharge.</p>
+
+    <div class="footer-social">
+      <a href="#" class="social-link" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+        </svg>
+      </a>
+      <a href="#" class="social-link" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+      </a>
+      <a href="#" class="social-link" aria-label="Twitter / X">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 The Wellness Hub. All rights reserved.</p>
+    <nav>
+      <ul class="footer-nav">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#booking">Booking</a></li>
+        <li><a href="#signup">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+<script>
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Form submission — Google Sheets via Apps Script
+  const form = document.getElementById('signupForm');
+  const success = document.getElementById('formSuccess');
+
+  // REPLACE THIS URL with your Google Apps Script Web App URL after setup
+  const APPS_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    const data = {
+      fullName: document.getElementById('fullName').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value,
+      timestamp: new Date().toISOString()
+    };
+
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      form.style.display = 'none';
+      success.style.display = 'block';
+    } catch (err) {
+      btn.textContent = 'Notify Me';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again.');
+    }
+  });
+</script>
+
+</body>
+</html>
