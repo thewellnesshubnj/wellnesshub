@@ -728,7 +728,7 @@ export default function Home() {
 
         <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "16px" }}>
           <p style={{ fontFamily: "var(--font-dm-sans)", fontSize: "11px", color: "var(--green)", opacity: 0.7, letterSpacing: "0.04em" }}>
-            © 2025 The Wellness Hub. All rights reserved.
+            © 2026 The Wellness Hub. All Rights Reserved. Made By Aliza Mirza.
           </p>
           <nav>
             <ul style={{ display: "flex", gap: "24px", listStyle: "none", margin: 0, padding: 0 }}>
