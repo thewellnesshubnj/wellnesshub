@@ -257,7 +257,7 @@ export default function Home() {
             <p style={{ fontFamily: "var(--font-playfair)", color: "var(--green)", fontSize: "20px", fontWeight: 700, lineHeight: 1.1 }}>
               The Wellness Hub
             </p>
-            <p style={{ fontFamily: "var(--font-dm-sans)", color: "var(--dry-sage)", fontSize: "10px", fontWeight: 500, letterSpacing: "0.16em", textTransform: "uppercase" }}>
+            <p style={{ fontFamily: "var(--font-dm-sans)", color: "var(--green)", fontSize: "10px", fontWeight: 500, letterSpacing: "0.16em", textTransform: "uppercase" }}>
               Rewind · Rejuvenate · Recharge
             </p>
           </div>
