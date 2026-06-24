@@ -34,7 +34,7 @@ const SERVICES = [
     alt: "Infrared Treadmill Session",
   },
   {
-    name: "AI-Led Pilates",
+    name: "AI-Led Strength Training & Pilates",
     image: "/pilates.jpeg",
     alt: "Pilates session",
   },
@@ -69,7 +69,7 @@ const PRICING = [
     tier: "Silver",
     name: "Restore",
     price: "TBD",
-    blurb: "The details of our Silver membership are being thoughtfully curated. Exact inclusions, pricing, and perks will be announced at launch — stay tuned.",
+    blurb: "The details of our Silver membership are being thoughtfully curated. Exact inclusions, pricing, and perks will be announced at launch.",
     features: ["60-min therapeutic massage", "Basic wellness consultation", "Aromatherapy add-on"],
   },
   {
@@ -81,10 +81,10 @@ const PRICING = [
     features: ["90-min full body treatment", "AI wellness assessment", "Facial + body scrub", "Post-session health report"],
   },
   {
-    tier: "Diamond",
+    tier: "Platinum",
     name: "Transcend",
     price: "TBD",
-    blurb: "The Diamond experience will be unlike anything else. Full details are being decided — check back at launch for our premium, all-inclusive offering.",
+    blurb: "The Platinum experience will be unlike anything else. Full details are being decided — check back at launch for our premium, all-inclusive offering.",
     features: ["Full-day luxury retreat", "Comprehensive AI health plan", "All services included", "Priority scheduling"],
   },
 ];
@@ -167,7 +167,7 @@ function FadeIn({
 //   3. Uncomment the <Image> line and set the correct filename
 // Recommended: PNG or SVG, minimum 200×200 px, transparent background
 // ─────────────────────────────────────────────
-function Logo({ size = 32, color = "var(--green)" }: { size?: number; color?: string }) {
+function Logo({ size = 40, color = "var(--green)" }: { size?: number; color?: string }) {
   return (
     // ↓ SWAP THIS with: <Image src="/logo.png" alt="The Wellness Hub" width={size} height={size} />
     <Image src = "/logo.png" alt = "The Wellness Hub" width = {size} height = {size} unoptimized />
@@ -252,12 +252,12 @@ export default function Home() {
         className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-[6%] h-[70px]"
       >
         <a href="#home" className="flex items-center gap-3 no-underline">
-          <Logo size={32} color="var(--green)" />
+          <Logo size={40} color="var(--green)" />
           <div>
-            <p style={{ fontFamily: "var(--font-playfair)", color: "var(--green)", fontSize: "15px", fontWeight: 700, lineHeight: 1.1 }}>
+            <p style={{ fontFamily: "var(--font-playfair)", color: "var(--green)", fontSize: "20px", fontWeight: 700, lineHeight: 1.1 }}>
               The Wellness Hub
             </p>
-            <p style={{ fontFamily: "var(--font-dm-sans)", color: "var(--dry-sage)", fontSize: "9px", fontWeight: 400, letterSpacing: "0.16em", textTransform: "uppercase" }}>
+            <p style={{ fontFamily: "var(--font-dm-sans)", color: "var(--dry-sage)", fontSize: "10px", fontWeight: 500, letterSpacing: "0.16em", textTransform: "uppercase" }}>
               Rewind · Rejuvenate · Recharge
             </p>
           </div>
@@ -337,7 +337,7 @@ export default function Home() {
 
         <div className="flex flex-col justify-center px-[8%] py-20 md:py-24" style={{ position: "relative", zIndex: 1 }}>
           <FadeIn>
-            <p style={{ fontFamily: "var(--font-dm-sans)", fontSize: "10px", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--dry-sage)", fontWeight: 500, marginBottom: "24px" }}>
+            <p style={{ fontFamily: "var(--font-dm-sans)", fontSize: "14px", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--dry-sage)", fontWeight: 700, marginBottom: "24px" }}>
               Welcome to The Wellness Hub
             </p>
             <h1 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(38px, 4.5vw, 64px)", fontWeight: 700, lineHeight: 1.08, textTransform: "uppercase", letterSpacing: "-0.01em", color: "var(--green)", marginBottom: "28px" }}>
@@ -384,14 +384,14 @@ export default function Home() {
         style={{ backgroundColor: "var(--almond)", padding: "100px 8%" }}
       >
         <FadeIn className="text-center mb-16">
-          <p style={{ fontFamily: "var(--font-dm-sans)", fontSize: "10px", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--dry-sage)", fontWeight: 500, marginBottom: "14px" }}>
+          <p style={{ fontFamily: "var(--font-dm-sans)", fontSize: "15px", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--persian-orange)", fontWeight: 700, marginBottom: "14px" }}>
             What We Offer
           </p>
           <h2 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(28px, 3vw, 44px)", fontWeight: 700, textTransform: "uppercase", color: "var(--green)", marginBottom: "20px" }}>
             Our Top <span style={{ color: "var(--green)" }}>Services</span>
           </h2>
           <p style={{ fontFamily: "var(--font-dm-sans)", fontSize: "15px", lineHeight: 1.8, color: "var(--green)", opacity: 0.65, maxWidth: "580px", margin: "0 auto", fontWeight: 300 }}>
-            Customised wellness experiences that align with your lifestyle, goals, and unique needs — blending traditional spa therapies with AI-driven health insights.
+            Customised wellness experiences that align with your lifestyle, goals, and unique needs. We present traditional spa therapies with AI-driven health insights.
           </p>
         </FadeIn>
 
@@ -468,7 +468,7 @@ export default function Home() {
         </FadeIn>
 
         <FadeIn delay={100}>
-          <p style={{ fontFamily: "var(--font-dm-sans)", fontSize: "10px", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--dry-sage)", fontWeight: 500, marginBottom: "14px" }}>
+          <p style={{ fontFamily: "var(--font-dm-sans)", fontSize: "15px", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--persian-orange)", fontWeight: 700, marginBottom: "14px" }}>
             Our Story
           </p>
           <h2 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(26px, 2.8vw, 40px)", fontWeight: 700, textTransform: "uppercase", color: "var(--green)", marginBottom: "28px", lineHeight: 1.15 }}>
@@ -524,7 +524,7 @@ export default function Home() {
         style={{ backgroundColor: "var(--desert-sand)", padding: "100px 8%", textAlign: "center" }}
       >
         <FadeIn>
-          <p style={{ fontFamily: "var(--font-dm-sans)", fontSize: "10px", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--dry-sage)", fontWeight: 500, marginBottom: "14px" }}>
+          <p style={{ fontFamily: "var(--font-dm-sans)", fontSize: "15px", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--persian-orange)", fontWeight: 700, marginBottom: "14px" }}>
             Reserve Your Experience
           </p>
           <h2 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(28px, 3vw, 44px)", fontWeight: 700, textTransform: "uppercase", color: "var(--green)", marginBottom: "28px" }}>
@@ -581,7 +581,7 @@ export default function Home() {
       >
         <div style={{ maxWidth: "520px", margin: "0 auto" }}>
           <FadeIn>
-            <p style={{ fontFamily: "var(--font-dm-sans)", fontSize: "10px", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--dry-sage)", fontWeight: 500, marginBottom: "14px" }}>
+            <p style={{ fontFamily: "var(--font-dm-sans)", fontSize: "15px", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--persian-orange)", fontWeight: 700, marginBottom: "14px" }}>
               Stay Connected
             </p>
             <h2 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(28px, 3vw, 42px)", fontWeight: 700, textTransform: "uppercase", color: "var(--green)", marginBottom: "16px", lineHeight: 1.1 }}>
@@ -694,7 +694,7 @@ export default function Home() {
           style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "24px", marginBottom: "44px", paddingBottom: "32px", borderBottom: "1px solid rgba(29,106,27,0.2)" }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            <Logo size={38} />
+            <Logo size={40} />
             <div>
               <p style={{ fontFamily: "var(--font-playfair)", color: "var(--green)", fontSize: "18px", fontWeight: 700, lineHeight: 1.1 }}>
                 The Wellness Hub
@@ -727,8 +727,11 @@ export default function Home() {
         </div>
 
         <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "16px" }}>
+          <p style={{ fontFamily: "var(--font-dm-sans)", fontSize: "15px", color: "var(--green)", opacity: 0.7, letterSpacing: "0.04em" }}>
+            Made By Aliza Mirza.
+          </p>
           <p style={{ fontFamily: "var(--font-dm-sans)", fontSize: "11px", color: "var(--green)", opacity: 0.7, letterSpacing: "0.04em" }}>
-            © 2026 The Wellness Hub. All Rights Reserved. Made By Aliza Mirza.
+            © 2026 The Wellness Hub. All Rights Reserved. 
           </p>
           <nav>
             <ul style={{ display: "flex", gap: "24px", listStyle: "none", margin: 0, padding: 0 }}>
